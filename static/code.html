@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SportsBot Chat</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {colors: {background: "#fbf9f8", "inverse-on-surface": "#f3f0f0", "on-secondary-fixed": "#002204", "on-secondary-fixed-variant": "#005312", "surface-dim": "#dcd9d9", "outline-variant": "#c0c9bb", "on-tertiary": "#ffffff", "secondary-fixed": "#a3f69c", surface: "#fbf9f8", "surface-tint": "#2a6b2c", "tertiary-fixed": "#98f994", "inverse-primary": "#91d78a", "on-surface": "#1b1c1c", "primary-container": "#1b5e20", tertiary: "#00460e", "surface-container-low": "#f6f3f2", primary: "#00450d", "primary-fixed": "#acf4a4", "error-container": "#ffdad6", "tertiary-container": "#006017", "on-secondary-container": "#217128", "secondary-container": "#a0f399", "on-tertiary-fixed": "#002204", error: "#ba1a1a", "on-primary": "#ffffff", "surface-container-highest": "#e4e2e1", "on-error": "#ffffff", "on-error-container": "#93000a", outline: "#717a6d", "surface-container-high": "#eae8e7", "on-primary-fixed-variant": "#0c5216", "on-background": "#1b1c1c", "on-primary-fixed": "#002203", "surface-container": "#f0eded", "surface-container-lowest": "#ffffff", "tertiary-fixed-dim": "#7ddc7a", secondary: "#1b6d24", "inverse-surface": "#303030", "on-tertiary-fixed-variant": "#005313", "on-primary-container": "#90d689", "primary-fixed-dim": "#91d78a", "on-tertiary-container": "#7cdb7a", "on-secondary": "#ffffff", "secondary-fixed-dim": "#88d982", "on-surface-variant": "#41493e", "surface-variant": "#e4e2e1", "surface-bright": "#fbf9f8"}, borderRadius: {DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px"}, spacing: {margin: "16px", sm: "8px", xs: "4px", "touch-target": "44px", gutter: "12px", lg: "24px", unit: "4px", md: "16px", xl: "32px"}, fontFamily: {"body-md": ["Lexend"], "headline-md": ["Lexend"], "headline-lg": ["Lexend"], "label-lg": ["Lexend"], "label-sm": ["Lexend"], "body-lg": ["Lexend"], headline: ["Lexend"], display: ["Lexend"], body: ["Lexend"], label: ["Lexend"]}, fontSize: {"body-md": ["15px", {lineHeight: "20px", fontWeight: "400"}], "headline-md": ["22px", {lineHeight: "28px", fontWeight: "600"}], "headline-lg": ["28px", {lineHeight: "36px", fontWeight: "700"}], "label-lg": ["14px", {lineHeight: "20px", letterSpacing: "0.1px", fontWeight: "500"}], "label-sm": ["11px", {lineHeight: "16px", letterSpacing: "0.5px", fontWeight: "500"}], "body-lg": ["17px", {lineHeight: "24px", fontWeight: "400"}]}}}};</script>
+<style>
+        body {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        /* Custom scrollbar for webkit */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #dcd9d9;
+            border-radius: 9999px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #c0c9bb;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex items-center justify-between px-margin h-touch-target bg-surface/80 dark:bg-surface/80 backdrop-blur-md shadow-sm dark:shadow-none docked full-width top-0">
+<button class="w-touch-target h-touch-target flex items-center justify-center text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-colors active:opacity-70 transition-opacity rounded-full"><img alt="Whistle Logo" class="w-6 h-6 object-contain" src="https://lh3.googleusercontent.com/aida/ADBb0uhMjGG1qjfK3DXm2_kfWarkioY0OXhLyp93iYtmDfS6bfIoHaNSa-TDSxrOWkhO5HtiUmvqBVhQ_NKJtBP10u75VinzbgCbzseJ-ewZmzlbGOXhzsky9v6aKISTt5MczdNNOyGMAN1HOKucrupOW5gvCb7t8-_0pmqhM9xBHqUI7hh5nqTlDaRyVelEtoGA8LJqnx7I15TLWz214gyV-xKGA43R4YOApFom6R6pEUEK7YUsalSZMO-6WPE"/></button>
+<div class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed-dim">
+            SportsBot
+        </div>
+<button class="w-touch-target h-touch-target flex items-center justify-center text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-colors active:opacity-70 transition-opacity rounded-full">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</header>
+<!-- Main Content Area - Empty State -->
+<main class="flex-1 flex flex-col pt-[60px] pb-[80px] px-margin overflow-y-auto w-full max-w-2xl mx-auto"><h1 class="font-headline-lg text-headline-lg text-on-surface mb-xl text-center">Welcome!</h1>
+<!-- Illustration -->
+<div class="w-64 h-64 rounded-2xl overflow-hidden flex items-center justify-center mb-xl">
+<img alt="Minimalist sports-themed illustration for an empty state of a chat app. Subtle line art of various sports equipment (soccer ball, tennis racket, basketball) in a light grey and stadium green color palette. Clean, professional, and modern style. White background." class="w-full h-full object-contain" data-alt="A minimalist sports-themed digital illustration featuring subtle line art of various sports equipment like a soccer ball, tennis racket, and basketball. The composition is set against a pure white background, utilizing a light grey and stadium green color palette. The aesthetic is extremely clean, professional, and modern, perfectly suited for an empty state in a high-performance sports application. The lighting is flat and uniform, emphasizing the sleek, corporate hybrid design style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFkh_3luSoSmizvMShdZSqLwZ_-yGxbK3JMFMfmF38CkRqcYI5ssNm4-soPCqxs6MbFcKk1jdLwxAx87dVvM9ablqeJvFV8GxGruRPYiSdjyonh_oft_tfAuoB85AbFc0c5Pr5CnO3q2NdUxBrqLIy2cu0VUgc2vcARXvjXGaypy4dIruuBWsxfV-Ac9muHmY0qsNc2V53ErwsibbQ_UhRihVSHFZ0iXT0yATgQLCHidNyHp0sW36avobXZJffCag-2fdVPQqJo3s"/>
+</div>
+<!-- Suggestion Chips -->
+<div class="flex flex-col gap-sm sm:gap-md w-full max-w-md">
+<button class="w-full text-left px-sm sm:px-margin py-sm sm:py-md rounded-xl border border-outline-variant bg-surface hover:bg-surface-container-high active:bg-surface-container transition-colors shadow-sm flex items-center gap-sm">
+<span class="material-symbols-outlined text-base sm:text-body-lg">search</span>
+<span class="font-body-md text-body-sm sm:text-body-md text-on-surface">Who won the Champions League final?</span>
+</button>
+<button class="w-full text-left px-sm sm:px-margin py-sm sm:py-md rounded-xl border border-outline-variant bg-surface hover:bg-surface-container-high active:bg-surface-container transition-colors shadow-sm flex items-center gap-sm">
+<span class="material-symbols-outlined text-base sm:text-body-lg">search</span>
+<span class="font-body-md text-body-sm sm:text-body-md text-on-surface">How does offside work?</span>
+</button>
+<button class="w-full text-left px-sm sm:px-margin py-sm sm:py-md rounded-xl border border-outline-variant bg-surface hover:bg-surface-container-high active:bg-surface-container transition-colors shadow-sm flex items-center gap-sm">
+<span class="material-symbols-outlined text-base sm:text-body-lg">search</span>
+<span class="font-body-md text-body-sm sm:text-body-md text-on-surface">Who is the GOAT in tennis?</span>
+</button>
+</div>
+</main>
+<!-- Bottom Input Area -->
+<div class="fixed bottom-0 left-0 w-full bg-surface border-t border-outline-variant px-sm sm:px-margin py-sm flex items-end gap-sm pb-[calc(16px+env(safe-area-inset-bottom))]">
+<button class="h-touch-target w-touch-target flex-shrink-0 flex items-center justify-center text-outline hover:text-on-surface transition-colors rounded-full mb-1">
+<span class="material-symbols-outlined">attach_file</span>
+</button>
+<div class="flex-1 min-h-[48px] sm:min-h-[56px] bg-surface-container-low rounded-3xl border border-outline-variant flex items-center px-sm sm:px-margin relative">
+<textarea class="w-full bg-transparent border-none focus:ring-0 resize-none font-body-md text-body-md text-on-surface placeholder-outline py-sm sm:py-md m-0 p-0 block text-sm sm:text-base" placeholder="Ask SportsBot anything..." rows="1"></textarea>
+</div>
+<button class="h-[48px] sm:h-[56px] w-[48px] sm:w-[56px] flex-shrink-0 flex items-center justify-center bg-primary-container text-on-primary-container rounded-full opacity-50 cursor-not-allowed transition-opacity shadow-sm">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">send</span>
+</button>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const textarea = document.querySelector('textarea');
+    const sendBtn = document.querySelector('button.bg-primary-container');
+    const attachBtn = Array.from(document.querySelectorAll('.material-symbols-outlined')).find(el => el.textContent.trim() === 'attach_file').closest('button');
+    const mainEl = document.querySelector('main');
+    
+    const chatContainer = document.createElement('div');
+    chatContainer.id = 'chat-list';
+    chatContainer.className = 'w-full flex flex-col gap-4 flex-1 overflow-y-auto';
+    chatContainer.style.display = 'none';
+    
+    const emptyState = document.createElement('div');
+    emptyState.className = 'flex flex-col items-center justify-center w-full max-w-2xl mx-auto empty-state min-h-[400px]';
+    while (mainEl.firstChild) {
+        emptyState.appendChild(mainEl.firstChild);
+    }
+    mainEl.appendChild(emptyState);
+    mainEl.appendChild(chatContainer);
+    
+    const chips = emptyState.querySelectorAll('button');
+    chips.forEach(chip => {
+        chip.addEventListener('click', () => {
+            const text = chip.querySelector('.font-body-md')?.textContent || chip.textContent;
+            textarea.value = text.trim();
+            checkInput();
+            handleSend();
+        });
+    });
+
+    let conversationHistory = [];
+    let selectedFile = null;
+    
+    const fileInput = document.createElement('input');
+    fileInput.type = 'file';
+    fileInput.accept = 'image/*';
+    fileInput.style.display = 'none';
+    document.body.appendChild(fileInput);
+    
+    attachBtn.addEventListener('click', () => {
+        fileInput.click();
+    });
+    
+    const inputWrapper = textarea.parentElement;
+    const previewContainer = document.createElement('div');
+    previewContainer.className = 'absolute left-4 -top-16 w-12 h-12 rounded-lg border border-outline-variant bg-surface overflow-hidden hidden shadow-md';
+    const previewImg = document.createElement('img');
+    previewImg.className = 'w-full h-full object-cover';
+    previewContainer.appendChild(previewImg);
+    
+    const clearPreviewBtn = document.createElement('button');
+    clearPreviewBtn.innerHTML = '<span class="material-symbols-outlined text-[16px]">close</span>';
+    clearPreviewBtn.className = 'absolute top-0 right-0 bg-black/50 text-white rounded-full w-4 h-4 flex items-center justify-center m-1';
+    clearPreviewBtn.onclick = (e) => {
+        e.stopPropagation();
+        clearFile();
+    };
+    previewContainer.appendChild(clearPreviewBtn);
+    inputWrapper.appendChild(previewContainer);
+    
+    function clearFile() {
+        selectedFile = null;
+        fileInput.value = '';
+        previewContainer.classList.add('hidden');
+        checkInput();
+    }
+    
+    fileInput.addEventListener('change', (e) => {
+        if (e.target.files && e.target.files[0]) {
+            selectedFile = e.target.files[0];
+            const reader = new FileReader();
+            reader.onload = (ev) => {
+                previewImg.src = ev.target.result;
+                previewContainer.classList.remove('hidden');
+                checkInput();
+            };
+            reader.readAsDataURL(selectedFile);
+        }
+    });
+
+    function checkInput() {
+        if (textarea.value.trim() === '' && !selectedFile) {
+            sendBtn.disabled = true;
+            sendBtn.classList.add('opacity-50', 'cursor-not-allowed');
+        } else {
+            sendBtn.disabled = false;
+            sendBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+        }
+    }
+
+    textarea.addEventListener('input', () => {
+        textarea.style.height = 'auto';
+        textarea.style.height = (textarea.scrollHeight) + 'px';
+        checkInput();
+    });
+    
+    textarea.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' && !e.shiftKey) {
+            e.preventDefault();
+            if (!sendBtn.disabled) handleSend();
+        }
+    });
+
+    sendBtn.addEventListener('click', () => {
+        if (!sendBtn.disabled) handleSend();
+    });
+    
+    function appendMessage(role, text) {
+        if (emptyState.style.display !== 'none') {
+            emptyState.style.display = 'none';
+            chatContainer.style.display = 'flex';
+            mainEl.classList.remove('justify-center');
+            mainEl.classList.add('justify-start');
+            // Set explicit height for proper scrolling
+            const headerHeight = 60;
+            const bottomHeight = 80;
+            const availableHeight = window.innerHeight - headerHeight - bottomHeight;
+            chatContainer.style.height = availableHeight + 'px';
+        }
+        
+        const bubble = document.createElement('div');
+        bubble.className = `max-w-[85%] sm:max-w-[75%] rounded-2xl p-3 sm:p-4 ${role === 'user' ? 'bg-primary-container text-on-primary-container self-end rounded-br-sm' : 'bg-surface-container text-on-surface self-start rounded-bl-sm'}`;
+        
+        if (role === 'user') {
+            bubble.textContent = text;
+        } else {
+            bubble.innerHTML = marked.parse(text);
+            const p = bubble.querySelectorAll('p');
+            p.forEach(el => el.classList.add('mb-2', 'last:mb-0'));
+            const ul = bubble.querySelectorAll('ul');
+            ul.forEach(el => el.classList.add('list-disc', 'ml-4', 'mb-2'));
+            const ol = bubble.querySelectorAll('ol');
+            ol.forEach(el => el.classList.add('list-decimal', 'ml-4', 'mb-2'));
+            const a = bubble.querySelectorAll('a');
+            a.forEach(el => el.classList.add('text-primary', 'underline'));
+            const strong = bubble.querySelectorAll('strong');
+            strong.forEach(el => el.classList.add('font-bold'));
+            const h1 = bubble.querySelectorAll('h1, h2, h3');
+            h1.forEach(el => el.classList.add('font-bold', 'mb-2', 'mt-4'));
+        }
+        
+        chatContainer.appendChild(bubble);
+        // Smooth scroll to bottom
+        setTimeout(() => {
+            chatContainer.scrollTop = chatContainer.scrollHeight;
+        }, 100);
+        
+        return bubble;
+    }
+
+    // Handle window resize for responsive behavior
+    window.addEventListener('resize', () => {
+        if (chatContainer.style.display === 'flex') {
+            const headerHeight = 60;
+            const bottomHeight = 80;
+            const availableHeight = window.innerHeight - headerHeight - bottomHeight;
+            chatContainer.style.height = availableHeight + 'px';
+        }
+    });
+
+    async function handleSend() {
+        const text = textarea.value.trim();
+        if (!text && !selectedFile) return;
+        
+        const currentFile = selectedFile;
+        const currentText = text;
+        
+        let displayMsg = currentText;
+        if (currentFile) displayMsg = `[Image Attached] ${currentText}`.trim();
+        appendMessage('user', displayMsg);
+        
+        textarea.value = '';
+        textarea.style.height = 'auto';
+        clearFile();
+        checkInput();
+        
+        conversationHistory.push({
+            role: "user",
+            parts: [{text: displayMsg}]
+        });
+        
+        const loadingBubble = appendMessage('model', '...');
+        
+        try {
+            let res;
+            if (currentFile) {
+                const formData = new FormData();
+                formData.append('file', currentFile);
+                formData.append('prompt', currentText);
+                
+                res = await fetch('/vision', {
+                    method: 'POST',
+                    body: formData
+                });
+            } else {
+                res = await fetch('/chat', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        message: currentText,
+                        history: conversationHistory.slice(0, -1)
+                    })
+                });
+            }
+            
+            const data = await res.json();
+            const reply = data.reply || "Something went wrong.";
+            
+            chatContainer.removeChild(loadingBubble);
+            appendMessage('model', reply);
+            
+            conversationHistory.push({
+                role: "model",
+                parts: [{text: reply}]
+            });
+            
+        } catch (err) {
+            chatContainer.removeChild(loadingBubble);
+            appendMessage('model', "Something went wrong — please retry.");
+        }
+    }
+});
+</script>
+</body></html>
